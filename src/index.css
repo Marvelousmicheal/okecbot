@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    color: white;
+    background-color: #000;
+}
+.bg-black-custom{
+  background-color: #111111;
+}
+.custom-transition{
+    transition: all 0.5s ease-in-out;
+}
+.wave{
+    transform: rotate(20deg);
+    animation: infinite wave 5s ease;
+}
+:root {
+    --color-bg1: rgb(0, 51, 102);
+    /* Dark blue */
+    --color-bg2: rgb(0, 41, 82);
+    /* Deeper dark blue */
+    --color1: 0, 102, 204;
+    /* Blue */
+    --color2: 0, 77, 153;
+    /* Deep blue */
+    --color3: 0, 26, 51;
+    /* Very dark blue */
+    --color4: 0, 0, 128;
+    /* Navy blue */
+    --color5: 0, 0, 153;
+    /* Dark navy blue */
+    --color-interactive: 0, 153, 204;
+    /* Interactive dark blue */
+    
+    --circle-size: 80%;
+    --blending: hard-light;
+  }
+  
+  .gradient-bg {
+    width: 100vw;
+    height: 150dvh;
+    z-index: -1;
+    position: absolute;
+   overflow: hidden;
+
+    
+  
+  }
+  .gradient-bg .gradient-container {
+    filter: url(#goo) blur(50px);
+    width: 100%;
+    height: 100%;
+  }
+  .gradient-bg svg {
+    display: none;
+  }
+  .gradient-bg .bg1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+    opacity: 1;
+  }
+  .gradient-bg .bg2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+    opacity: 1;
+  }
+  .gradient-bg .bg3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+    opacity: 1;
+  }
+
+  .gradient-bg .bg5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+    opacity: 1;
+  }
+  .gradient-bg .mouse-mover {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+    opacity: 0.7;
+  }
+  
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+ 
+
+@keyframes wave {
+    0%{
+        transform: rotate(40deg);
+    }
+25%{
+    transform: rotate(60deg);
+}
+    50%{
+        transform: rotate(40deg);
+    }
+    75%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(40deg);
+    }
+}
