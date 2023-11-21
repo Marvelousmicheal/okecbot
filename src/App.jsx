@@ -19,7 +19,7 @@ function App() {
       {/* <Preloader/> */}
       <CookiesToast />
 <Background/>
-      <div className=" container mx-auto ">
+      <div className=" relative container mx-auto ">
         
         <Header />
       </div >
